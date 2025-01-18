@@ -1,0 +1,48 @@
+{
+	"name": "lambda-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"prebuild": "rimraf dist",
+		"build": "npm run prebuild && npx webpack",
+		"build:layer": "rimraf dist-layer && mkdir -p dist-layer/nodejs && cp package.json dist-layer/nodejs && npm install --omit=dev --prefix dist-layer/nodejs",
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/comlyboy/lambda-api.git"
+	},
+	"keywords": [
+		"lambda"
+	],
+	"author": "Cornelius Okeke",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/comlyboy/lambda-api/issues"
+	},
+	"homepage": "https://github.com/comlyboy/lambda-api#readme",
+	"dependencies": {
+		"@incloodsolutions/toolkit": "^0.0.155",
+		"lambda-api": "^1.1.0"
+	},
+	"devDependencies": {
+		"@types/aws-lambda": "^8.10.147",
+		"@types/node": "^22.10.7",
+		"aws-cdk-lib": "^2.176.0",
+		"constructs": "^10.4.2",
+		"jest": "^29.7.0",
+		"prettier": "^3.4.2",
+		"rimraf": "^6.0.1",
+		"terser-webpack-plugin": "^5.3.11",
+		"ts-jest": "^29.2.5",
+		"ts-loader": "^9.5.2",
+		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0",
+		"tsconfig-paths-webpack-plugin": "^4.2.0",
+		"typescript": "^5.7.3",
+		"webpack": "^5.97.1",
+		"webpack-cli": "^6.0.1",
+		"webpack-node-externals": "^3.0.0"
+	}
+}
