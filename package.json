@@ -7,6 +7,7 @@
 		"prebuild": "rimraf dist",
 		"build": "npm run prebuild && npx webpack",
 		"build:layer": "rimraf dist-layer && mkdir -p dist-layer/nodejs && cp package.json dist-layer/nodejs && npm install --omit=dev --prefix dist-layer/nodejs",
+		"start": "tsc && npx ts-node test/test.ts",
 		"test": "jest"
 	},
 	"repository": {
