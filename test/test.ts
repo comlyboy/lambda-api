@@ -3,8 +3,8 @@ import { bootstrap } from "../src/main";
 
 const mockAPIGatewayProxyEventV2: APIGatewayProxyEventV2 = {
 	version: '2.0',
-	routeKey: 'GET /auth',
-	rawPath: '/products',
+	routeKey: 'GET /api/health',
+	rawPath: '/api/health',
 	rawQueryString: 'category=electronics&sort=price',
 	headers: {
 		'accept': 'application/json',
@@ -25,13 +25,13 @@ const mockAPIGatewayProxyEventV2: APIGatewayProxyEventV2 = {
 		domainPrefix: 'api',
 		http: {
 			method: 'GET',
-			path: '/products',
+			path: '/api/health',
 			protocol: 'HTTP/1.1',
 			sourceIp: '192.168.1.1',
 			userAgent: 'Mozilla/5.0',
 		},
 		requestId: 'abcd-1234-efgh-5678',
-		routeKey: 'GET /products',
+		routeKey: 'GET /api/health',
 		stage: 'prod',
 		time: '18/Jan/2025:12:34:56 +0000',
 		timeEpoch: 1674050096000,

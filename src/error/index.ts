@@ -1,5 +1,5 @@
+import { ErrorHandlingMiddleware } from "lambda-api";
 import { apiResult } from "@incloodsolutions/toolkit";
-import { ErrorHandlingMiddleware } from "lambda-api"
 
 export const errorHandler: ErrorHandlingMiddleware = (error, req, res, next) => {
 	let statusCode = (error as any).status as number || 500;
@@ -20,6 +20,8 @@ export const errorHandler: ErrorHandlingMiddleware = (error, req, res, next) => 
 		message: error.message,
 		error: {
 			statusCode,
+			path: req.path,
+			method: req.method,
 			message: error.message
 		}
 	}));

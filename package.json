@@ -25,7 +25,8 @@
 	"homepage": "https://github.com/comlyboy/lambda-api#readme",
 	"dependencies": {
 		"@incloodsolutions/toolkit": "^0.0.155",
-		"lambda-api": "^1.1.0"
+		"lambda-api": "^1.1.0",
+		"zod": "^3.24.1"
 	},
 	"devDependencies": {
 		"@types/aws-lambda": "^8.10.147",

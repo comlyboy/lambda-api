@@ -1,8 +1,8 @@
 import lambdaApi from 'lambda-api';
-import { errorHandler } from './error';
 
-import { authRoutes } from './core/auth/auth.route';
-import { userRoutes } from './core/user/user.route';
+import { errorHandler } from './error';
+import { authRoutes, userRoutes } from './core';
+import { healthRoutes } from './core/health';
 
 export function initApplication() {
 	const application = lambdaApi({ base: 'api' });
@@ -17,6 +17,7 @@ export function initApplication() {
 
 	application.register(authRoutes, { prefix: 'auth' });
 	application.register(userRoutes, { prefix: 'user' });
+	application.register(healthRoutes, { prefix: 'health' });
 	application.use(errorHandler);
 	return application;
 }
